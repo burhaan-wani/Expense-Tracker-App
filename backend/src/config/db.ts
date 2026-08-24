@@ -6,7 +6,6 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 const connectDB = async () => {
   try {
     const mongoDBUri = process.env.MONGODBURI as string;
-    console.log(mongoDBUri);
 
     const connection = await mongoose.connect(process.env.MONGODBURI as string);
     console.log("═══════════════════════════════════════");

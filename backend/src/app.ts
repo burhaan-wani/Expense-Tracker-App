@@ -44,13 +44,6 @@ app.use("/api/analytics", analyticsRoutes);
 // Avatar
 app.use("/uploads", express.static("uploads"));
 
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: `Cannot Find ${req.method} ${req.originalUrl}`,
-  });
-});
-
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
 
