@@ -4,8 +4,8 @@
   "description": "A secure, full-stack personal finance application built with MongoDB, Express, React, and Node.js. PennyWise allows users to track expenses, visualize spending patterns through interactive charts, and manage their financial data — all behind a secure JWT-authenticated API.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client && npm run build --prefix server",
-    "start": "npm run start --prefix server"
+    "build": "npm install --prefix backend && npm install --prefix client && npm run build --prefix client && npm run build --prefix backend",
+    "start": "npm run start --prefix backend"
   },
   "keywords": [],
   "type": "module"
