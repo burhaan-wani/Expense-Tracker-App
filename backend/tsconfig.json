@@ -3,8 +3,10 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": true
+    "strict": true,
+    "lib": ["ES2022"], // 👈 Gives TypeScript access to modern JS features
+    "types": ["node"] // 👈 Forces TypeScript to load Node types explicitly
   },
   "exclude": ["node_modules"],
-  "include": ["./src"]
+  "include": ["src"]
 }
