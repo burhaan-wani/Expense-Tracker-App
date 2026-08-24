@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import { AuthResponse } from "../types";
-import { asyncHandler, sendSuccess } from "../utils/responseHelpers";
-import { AppError } from "../middleware/errorHandler";
-import User from "../models/User";
+import { AuthResponse } from "../types/index.js";
+import { asyncHandler, sendSuccess } from "../utils/responseHelpers.js";
+import { AppError } from "../middleware/errorHandler.js";
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
-import { generateToken } from "../utils/tokenHelpers";
+import { generateToken } from "../utils/tokenHelpers.js";
 
 // export let fakeUsers: User[] = [
 //   {
@@ -57,7 +57,7 @@ export const signup = asyncHandler(
       if (!passwordRegex.test(password)) {
         throw new AppError(
           "Password must contain uppercase, lowercase, number, and special character (@$!%*?&)",
-          400
+          400,
         );
       }
     }
@@ -87,7 +87,7 @@ export const signup = asyncHandler(
     };
 
     sendSuccess(res, authResponse, "Account created successfully!", 201);
-  }
+  },
 );
 
 export const login = asyncHandler(
@@ -122,5 +122,5 @@ export const login = asyncHandler(
     };
 
     sendSuccess(res, authResponse, "Login successful");
-  }
+  },
 );

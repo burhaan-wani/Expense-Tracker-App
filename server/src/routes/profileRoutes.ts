@@ -7,9 +7,9 @@ import {
   getProfile,
   updateProfile,
   uploadAvatar,
-} from "../controllers/profileControllers";
-import { requireAuth } from "../middleware/authMiddleware";
-import { upload } from "../middleware/upload";
+} from "../controllers/profileControllers.js";
+import { requireAuth } from "../middleware/authMiddleware.js";
+import { upload } from "../middleware/upload.js";
 
 const router = Router();
 

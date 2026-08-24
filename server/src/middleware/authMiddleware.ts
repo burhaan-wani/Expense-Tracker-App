@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { AppError } from "./errorHandler";
+import { AppError } from "./errorHandler.js";
 import jwt from "jsonwebtoken";
 
 declare global {
@@ -13,7 +13,7 @@ declare global {
 export const requireAuth = (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const authHeader = req.headers.authorization;
 

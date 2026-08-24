@@ -8,5 +8,5 @@
     "start": "npm run start --prefix server"
   },
   "keywords": [],
-  "type": "commonjs"
+  "type": "module"
 }

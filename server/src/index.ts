@@ -1,13 +1,13 @@
 import path from "path";
 import express, { Application } from "express";
-import expenseRoutes from "./routes/expenseRoutes";
-import authRoutes from "./routes/authRoutes";
-import profileRoutes from "./routes/profileRoutes";
-import analyticsRoutes from "./routes/analyticsRoutes";
-import { errorHandler } from "./middleware/errorHandler";
+import expenseRoutes from "./routes/expenseRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import profileRoutes from "./routes/profileRoutes.js";
+import analyticsRoutes from "./routes/analyticsRoutes.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "./config/db";
+import connectDB from "./config/db.js";
 
 dotenv.config();
 

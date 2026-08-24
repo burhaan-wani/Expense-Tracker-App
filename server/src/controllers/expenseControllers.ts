@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import { ExpenseCategory } from "../types";
-import { asyncHandler, sendSuccess } from "../utils/responseHelpers";
-import { AppError } from "../middleware/errorHandler";
-import Expense from "../models/Expense";
-import User from "../models/User";
+import { ExpenseCategory } from "../types/index.js";
+import { asyncHandler, sendSuccess } from "../utils/responseHelpers.js";
+import { AppError } from "../middleware/errorHandler.js";
+import Expense from "../models/Expense.js";
+import User from "../models/User.js";
 
 // export let fakeExpenses: Expense[] = [
 //   {

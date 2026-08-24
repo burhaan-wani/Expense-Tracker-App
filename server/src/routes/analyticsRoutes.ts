@@ -8,8 +8,8 @@ import {
   getPeriodStats,
   getSpendingTrends,
   getYearlyCategoryStats,
-} from "../controllers/analyticsControllers";
-import { requireAuth } from "../middleware/authMiddleware";
+} from "../controllers/analyticsControllers.js";
+import { requireAuth } from "../middleware/authMiddleware.js";
 
 const router = Router();
 

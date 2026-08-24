@@ -1,9 +1,13 @@
 import { NextFunction, Request, Response } from "express";
-import { asyncHandler, sendSuccess } from "../utils/responseHelpers";
-import { AppError } from "../middleware/errorHandler";
-import { DashboardStats, ExpenseCategory, MonthlyTotals } from "../types";
-import Expense from "../models/Expense";
-import User from "../models/User";
+import { asyncHandler, sendSuccess } from "../utils/responseHelpers.js";
+import { AppError } from "../middleware/errorHandler.js";
+import {
+  DashboardStats,
+  ExpenseCategory,
+  MonthlyTotals,
+} from "../types/index.js";
+import Expense from "../models/Expense.js";
+import User from "../models/User.js";
 
 const getMonthString = (date: Date): string => {
   const year = date.getFullYear();

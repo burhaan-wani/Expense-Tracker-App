@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IExpense } from "../types";
+import { IExpense } from "../types/index.js";
 
 const expenseSchema = new Schema<IExpense>(
   {
@@ -25,7 +25,7 @@ const expenseSchema = new Schema<IExpense>(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Expense = mongoose.model<IExpense>("Expense", expenseSchema);

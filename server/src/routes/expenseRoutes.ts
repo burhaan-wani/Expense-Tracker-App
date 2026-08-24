@@ -5,8 +5,8 @@ import {
   getAllExpenses,
   getExpenseById,
   updateExpense,
-} from "../controllers/expenseControllers";
-import { requireAuth } from "../middleware/authMiddleware";
+} from "../controllers/expenseControllers.js";
+import { requireAuth } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
