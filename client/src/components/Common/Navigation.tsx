@@ -12,7 +12,6 @@ export default function Navigation() {
     logout();
     navigate({ to: "/login" });
   }
-  console.log("user name from Navigation: ", user?.name);
   return (
     <header className="bg-slate-900 border-b border-slate-700 p-4 sm:px-8 sm:py-4 2xl:border-none 2xl:bg-transparent">
       <nav className="flex flex-col items-start gap-8 flex-wrap sm:flex-row sm:items-center sm:justify-between 2xl:py-8 2xl:border-b 2xl:border-purple-950">
@@ -87,9 +86,9 @@ export default function Navigation() {
                 <Avatar userName={user.name} avatarFileName={user.avatar} />
               )}
 
-              <span className="text-md text-white capitalize font-mono font-bold">
-                {user?.name}
-              </span>
+              {/* <span className="text-md text-white capitalize font-mono font-bold ">
+                {user?.name.slice(0, 2).toUpperCase()}
+              </span> */}
               <button
                 onClick={handleLogout}
                 className="px-4 py-2 border border-purple-700 text-purple-300 rounded-sm hover:bg-purple-900 transition-colors cursor-pointer"

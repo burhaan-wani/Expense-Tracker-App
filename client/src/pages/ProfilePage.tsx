@@ -16,8 +16,6 @@ export default function ProfilePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  console.log("user from ProfilePage: ", user);
-  console.log("user name from ProfilePage: ", user?.name);
   useEffect(() => {
     getProfile();
   }, [getProfile]);

@@ -1,4 +1,3 @@
-import { getInitials } from "@/utils/getInitials";
 import { User } from "lucide-react";
 
 interface AvatarProps {
@@ -23,7 +22,7 @@ export default function Avatar({ userName, avatarFileName }: AvatarProps) {
         >
           {userName ? (
             <span className={` font-bold text-gray-100`}>
-              {getInitials(userName)}
+              {userName.slice(0, 2).toUpperCase()}
             </span>
           ) : (
             <User className={"text-gray-400"} />
