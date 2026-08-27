@@ -61,6 +61,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
       return false;
     } catch (error) {
       const err = error as AxiosError<{ error: string }>;
+      console.log(error);
       set({
         error: err.response?.data?.error,
         isLoading: false,
@@ -104,10 +105,9 @@ export const useAuthStore = create<AuthStore>((set) => ({
 
     try {
       const response = await getProfileService();
-
       if (response.data) {
         set({
-          user: response.data,
+          user: response.data.user,
           isLoading: false,
           error: null,
         });
@@ -156,10 +156,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
       const response = await uploadAvatarService(file);
 
       if (response.data) {
-        const { avatar } = response.data;
-
         set((state) => ({
-          user: state.user ? { ...state.user, avatar } : null,
+          user: state.user ? { ...state.user, avatar: response.data } : null,
           isLoading: false,
           error: null,
         }));

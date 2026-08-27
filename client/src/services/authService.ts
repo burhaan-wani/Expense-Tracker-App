@@ -27,8 +27,7 @@ export const login = async (data: LoginRequest) => {
 };
 
 export const getProfile = async () => {
-  const response = await api.get<ApiResponse<User>>("/profile");
-
+  const response = await api.get("/profile");
   return response.data;
 };
 
@@ -46,15 +45,11 @@ export const uploadAvatar = async (file: File) => {
   const formData = new FormData();
   formData.append("avatar", file);
 
-  const response = await api.post<ApiResponse<Avatar>>(
-    "/profile/avatar",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+  const response = await api.post("/profile/avatar", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
     },
-  );
+  });
 
   return response.data;
 };

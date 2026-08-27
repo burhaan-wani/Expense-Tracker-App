@@ -7,9 +7,7 @@ interface AvatarProps {
 }
 
 export default function Avatar({ userName, avatarFileName }: AvatarProps) {
-  const avatarUrl = avatarFileName
-    ? `https://expense-tracker-app-gbfb.onrender.com/uploads/avatars/${avatarFileName}`
-    : null;
+  const avatarUrl = avatarFileName || null;
 
   return (
     <>

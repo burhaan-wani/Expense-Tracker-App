@@ -14,7 +14,7 @@ import { upload } from "../middlewares/upload.js";
 const router = Router();
 
 router.get("/", requireAuth, getProfile);
-router.put("/", requireAuth, updateProfile);
+router.patch("/", requireAuth, updateProfile);
 router.post("/avatar", requireAuth, upload.single("avatar"), uploadAvatar);
 router.get("/avatar", requireAuth, getAvatar);
 router.delete("/avatar", requireAuth, deleteAvatar);

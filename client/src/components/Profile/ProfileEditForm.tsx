@@ -8,7 +8,7 @@ interface ProfileEditFormProps {
 
 export default function ProfileEditForm({ onCancel }: ProfileEditFormProps) {
   const { user, updateProfile, isLoading, error } = useAuthStore();
-
+  console.log(user);
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
   const [password, setPassword] = useState("");

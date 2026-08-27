@@ -8,7 +8,6 @@ export default function AvatarUpload() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const { user, uploadAvatar, deleteAvatar, isLoading, error } = useAuthStore();
-
   function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
 

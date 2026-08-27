@@ -23,11 +23,11 @@ export const getProfile = asyncHandler(
 
     const { password: _, ...userWithoutPassword } = loggedInUser;
 
-    const userResponse: AuthResponse = {
-      user: { ...userWithoutPassword, _id: user._id.toString() },
-    };
+    // const userResponse: AuthResponse = {
+    //   user: { ...userWithoutPassword, _id: user._id.toString() },
+    // };
 
-    sendSuccess(res, userResponse, "Profile retrieved successfully");
+    sendSuccess(res, userWithoutPassword, "Profile retrieved successfully");
   },
 );
 
@@ -99,7 +99,7 @@ export const uploadAvatar = asyncHandler(
 
     await user.save();
 
-    sendSuccess(res, secure_url, "Avatar uploaded successfully");
+    sendSuccess(res, { avatar: secure_url }, "Avatar uploaded successfully");
   },
 );
 

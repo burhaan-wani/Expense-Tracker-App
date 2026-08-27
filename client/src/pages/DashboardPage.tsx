@@ -59,26 +59,6 @@ export default function DashboardPage() {
   );
   const [selectedRange, setSelectedRange] = useState("180");
 
-  // ─────────────────────────────────────────────────────────────────
-  // WHY I ADDED expenses.length TO THE DEPENDENCY ARRAY
-  // ─────────────────────────────────────────────────────────────────
-  // Before this fix, this useEffect only re-ran when selectedRange
-  // changed (e.g. user picks "Last 30 Days" from the dropdown).
-  //
-  // The problem: when a brand new expense is created on the dashboard,
-  // expenses.length changes from 0 to 1, but selectedRange did NOT
-  // change — so this useEffect never ran, and getPeriodStats was
-  // never called, leaving the pie chart empty.
-  //
-  // The fix: by adding expenses.length to the dependency array, React
-  // will now also re-run this useEffect whenever the number of expenses
-  // changes — which includes the moment the first expense is created.
-  //
-  // The guard "expenses.length > 0" makes sure we don't make a wasted
-  // API call when there are no expenses to analyse.
-  // ─────────────────────────────────────────────────────────────────
-  // ✅ Added expenses.length to deps so it re-runs when a new expense is created
-  // ✅ Added expenses.length > 0 guard to avoid calling with no data
   useEffect(() => {
     if (selectedRange !== "all" && expenses.length > 0) {
       const days = parseFloat(selectedRange);
