@@ -37,7 +37,7 @@ app.use("/api/expenses", expenseRoutes);
 app.use("/api/auth", authRoutes);
 
 // Profile Route
-app.use("/uploads", profileRoutes);
+app.use("/api/profile", profileRoutes);
 
 // Analytics
 app.use("/api/analytics", analyticsRoutes);

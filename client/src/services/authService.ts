@@ -37,7 +37,7 @@ export const updateProfile = async (data: {
   email?: string;
   password?: string;
 }) => {
-  const response = await api.put<ApiResponse<User>>("/profile", data);
+  const response = await api.patch<ApiResponse<User>>("/profile", data);
 
   return response.data;
 };
