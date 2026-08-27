@@ -168,6 +168,7 @@ export const getAvatar = asyncHandler(
   },
 );
 
+// delete avatar
 export const deleteAvatar = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const userId = req.userId;
