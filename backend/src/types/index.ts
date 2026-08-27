@@ -28,6 +28,7 @@ export interface User {
   email: string;
   password: string;
   avatar?: string;
+  public_id?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -37,6 +38,7 @@ export interface IUser extends Document {
   email: string;
   password: string;
   avatar?: string;
+  public_id?: string;
   createdAt: Date;
   updatedAt: Date;
 }

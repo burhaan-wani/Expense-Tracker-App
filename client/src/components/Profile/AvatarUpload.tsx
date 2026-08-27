@@ -51,9 +51,7 @@ export default function AvatarUpload() {
     setPreviewUrl(null);
   }
 
-  const avatarUrl = user?.avatar
-    ? `https://expense-tracker-app-gbfb.onrender.com/uploads/avatars/${user.avatar}`
-    : null;
+  const avatarUrl = user?.avatar;
 
   return (
     <div className=" border border-purple-950 rounded-sm p-6">
