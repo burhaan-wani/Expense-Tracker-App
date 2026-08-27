@@ -6,7 +6,6 @@ import {
 } from "@/types/auth.types";
 import api from "./api";
 import { ApiResponse, User } from "@/types";
-import { Avatar } from "@/types/auth.types";
 
 export const signup = async (data: SignupRequest) => {
   const response = await api.post<ApiResponse<AuthResponse>>(
