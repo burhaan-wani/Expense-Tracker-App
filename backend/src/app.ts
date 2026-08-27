@@ -23,6 +23,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(express.static("uploads"));
 
 // Basic Health Check Route
 app.get("/health-check", (req, res) => {
@@ -36,13 +37,12 @@ app.use("/api/expenses", expenseRoutes);
 app.use("/api/auth", authRoutes);
 
 // Profile Route
-app.use("/api/profile", profileRoutes);
+app.use("/uploads", profileRoutes);
 
 // Analytics
 app.use("/api/analytics", analyticsRoutes);
 
 // Avatar
-app.use("/uploads", express.static("uploads"));
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();

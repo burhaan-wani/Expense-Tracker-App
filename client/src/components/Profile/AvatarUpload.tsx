@@ -52,7 +52,7 @@ export default function AvatarUpload() {
   }
 
   const avatarUrl = user?.avatar
-    ? `http://localhost:8000/uploads/avatars/${user.avatar}`
+    ? `https://expense-tracker-app-gbfb.onrender.com/uploads/avatars/${user.avatar}`
     : null;
 
   return (
