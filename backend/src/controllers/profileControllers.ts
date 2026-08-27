@@ -2,13 +2,13 @@ import type { Request, Response, NextFunction } from "express";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { AppError } from "../middlewares/errorHandler.js";
 import { AuthResponse } from "../types/index.js";
+import User from "../models/User.js";
+import { sendSuccess } from "../utils/responseHelpers.js";
+import Expense from "../models/Expense.js";
 import {
   deleteFromCloudinary,
   uploadToCloudinary,
 } from "../utils/uploadToCloudinary.js";
-import User from "../models/User.js";
-import { sendSuccess } from "../utils/responseHelpers.js";
-import Expense from "../models/Expense.js";
 
 export const getProfile = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
