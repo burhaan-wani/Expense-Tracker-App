@@ -1,5 +1,5 @@
 import { useAuthStore } from "@/store/authStore";
-import { getInitials } from "@/utils/getInitials";
+// import { getInitials } from "@/utils/getInitials";
 import { Trash2, Upload, User } from "lucide-react";
 import { useState } from "react";
 
