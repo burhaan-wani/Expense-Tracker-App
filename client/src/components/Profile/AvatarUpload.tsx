@@ -70,7 +70,7 @@ export default function AvatarUpload() {
             <div className="size-32 rounded-full bg-purple-900/30 border-2 border-purple-500 flex items-center justify-center">
               {user ? (
                 <span className="text-3xl font-bold text-gray-100">
-                  {getInitials(user.name)}
+                  {user.name}
                 </span>
               ) : (
                 <User className="size-12 text-gray-400" />

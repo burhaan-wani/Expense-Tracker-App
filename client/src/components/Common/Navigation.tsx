@@ -2,7 +2,6 @@ import { useAuthStore } from "@/store/authStore";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { DollarSign } from "lucide-react";
 import Avatar from "./Avatar";
-import { getInitials } from "@/utils/getInitials";
 
 export default function Navigation() {
   const { isAuthenticated, user, logout } = useAuthStore();
@@ -13,7 +12,7 @@ export default function Navigation() {
     logout();
     navigate({ to: "/login" });
   }
-
+  console.log("user name from Navigation: ", user?.name);
   return (
     <header className="bg-slate-900 border-b border-slate-700 p-4 sm:px-8 sm:py-4 2xl:border-none 2xl:bg-transparent">
       <nav className="flex flex-col items-start gap-8 flex-wrap sm:flex-row sm:items-center sm:justify-between 2xl:py-8 2xl:border-b 2xl:border-purple-950">
@@ -89,7 +88,7 @@ export default function Navigation() {
               )}
 
               <span className="text-md text-white capitalize font-mono font-bold">
-                {getInitials(user?.name as string)}
+                {user?.name}
               </span>
               <button
                 onClick={handleLogout}
